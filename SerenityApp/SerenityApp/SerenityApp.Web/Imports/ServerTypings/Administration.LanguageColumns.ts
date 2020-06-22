@@ -1,0 +1,3 @@
+﻿namespace SerenityApp.Administration {
+}
+
