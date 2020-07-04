@@ -53,6 +53,20 @@ namespace MVC
             public const string ValidationError = "~/Views/Errors/ValidationError.cshtml";
         }
 
+        public static class Market
+        {
+            public static class Store
+            {
+                public const string StoreIndex = "~/Modules/Market/Store/StoreIndex.cshtml";
+            }
+
+            public static class Visit
+            {
+                public const string VisitIndex = "~/Modules/Market/Visit/VisitIndex.cshtml";
+            }
+
+        }
+
         public static class Membership
         {
             public static class Account
