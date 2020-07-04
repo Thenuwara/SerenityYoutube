@@ -1,10 +1,30 @@
-﻿{
+{
   "RootNamespace": "SerenityApp",
   "ServerTypings": {
     "Assemblies": [],
     "LocalTexts": true
   },
-  "Connections": [],
+  "Connections": [
+    {
+      "Key": "Market",
+      "Tables": [
+        {
+          "Tablename": "dbo.store",
+          "Identifier": "Store",
+          "Module": "Market",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.visit",
+          "Identifier": "Visit",
+          "Module": "Market",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
   "BaseRowClasses": [],
-  "RemoveForeignFields": []
+  "RemoveForeignFields": [],
+  "CustomGenerate": {},
+  "CustomSettings": {}
 }

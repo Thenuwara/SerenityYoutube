@@ -508,6 +508,121 @@ declare namespace SerenityApp {
         Serial?: string;
     }
 }
+declare namespace SerenityApp.Market {
+}
+declare namespace SerenityApp.Market {
+    interface StoreForm {
+        Name: Serenity.StringEditor;
+        Address: Serenity.StringEditor;
+    }
+    class StoreForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace SerenityApp.Market {
+    interface StoreRow {
+        Id?: number;
+        Name?: string;
+        Address?: string;
+    }
+    namespace StoreRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Market.Store";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Address = "Address"
+        }
+    }
+}
+declare namespace SerenityApp.Market {
+    namespace StoreService {
+        const baseUrl = "Market/Store";
+        function Create(request: Serenity.SaveRequest<StoreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<StoreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<StoreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<StoreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Market/Store/Create",
+            Update = "Market/Store/Update",
+            Delete = "Market/Store/Delete",
+            Retrieve = "Market/Store/Retrieve",
+            List = "Market/Store/List"
+        }
+    }
+}
+declare namespace SerenityApp.Market {
+}
+declare namespace SerenityApp.Market {
+    interface VisitForm {
+        FirstName: Serenity.StringEditor;
+        LastName: Serenity.StringEditor;
+        VisitedAt: Serenity.DateEditor;
+        Phone: Serenity.StringEditor;
+        StoreId: Serenity.IntegerEditor;
+    }
+    class VisitForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace SerenityApp.Market {
+    interface VisitRow {
+        VisitId?: number;
+        FirstName?: string;
+        LastName?: string;
+        VisitedAt?: string;
+        Phone?: string;
+        StoreId?: number;
+        StoreName?: string;
+        StoreAddress?: string;
+    }
+    namespace VisitRow {
+        const idProperty = "VisitId";
+        const nameProperty = "FirstName";
+        const localTextPrefix = "Market.Visit";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            VisitId = "VisitId",
+            FirstName = "FirstName",
+            LastName = "LastName",
+            VisitedAt = "VisitedAt",
+            Phone = "Phone",
+            StoreId = "StoreId",
+            StoreName = "StoreName",
+            StoreAddress = "StoreAddress"
+        }
+    }
+}
+declare namespace SerenityApp.Market {
+    namespace VisitService {
+        const baseUrl = "Market/Visit";
+        function Create(request: Serenity.SaveRequest<VisitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<VisitRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<VisitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<VisitRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Market/Visit/Create",
+            Update = "Market/Visit/Update",
+            Delete = "Market/Visit/Delete",
+            Retrieve = "Market/Visit/Retrieve",
+            List = "Market/Visit/List"
+        }
+    }
+}
 declare namespace SerenityApp.Membership {
     interface ChangePasswordForm {
         OldPassword: Serenity.PasswordEditor;
@@ -1045,6 +1160,54 @@ declare namespace SerenityApp.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace SerenityApp.Market {
+    class StoreDialog extends Serenity.EntityDialog<StoreRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: StoreForm;
+    }
+}
+declare namespace SerenityApp.Market {
+    class StoreGrid extends Serenity.EntityGrid<StoreRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof StoreDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace SerenityApp.Market {
+    class VisitDialog extends Serenity.EntityDialog<VisitRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: VisitForm;
+    }
+}
+declare namespace SerenityApp.Market {
+    class VisitGrid extends Serenity.EntityGrid<VisitRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof VisitDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace SerenityApp.Membership {

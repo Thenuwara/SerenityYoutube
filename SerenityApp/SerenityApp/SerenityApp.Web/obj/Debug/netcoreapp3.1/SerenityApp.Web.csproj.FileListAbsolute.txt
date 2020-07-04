@@ -426,3 +426,5 @@ D:\HD\Project\YouTube\SerenityYoutube\SerenityApp\SerenityApp\SerenityApp.Web\ob
 D:\HD\Project\YouTube\SerenityYoutube\SerenityApp\SerenityApp\SerenityApp.Web\obj\Debug\netcoreapp3.1\SerenityApp.Web.dll
 D:\HD\Project\YouTube\SerenityYoutube\SerenityApp\SerenityApp\SerenityApp.Web\obj\Debug\netcoreapp3.1\SerenityApp.Web.pdb
 D:\HD\Project\YouTube\SerenityYoutube\SerenityApp\SerenityApp\SerenityApp.Web\obj\Debug\netcoreapp3.1\SerenityApp.Web.genruntimeconfig.cache
+D:\HD\Project\YouTube\SerenityYoutube\SerenityApp\SerenityApp\SerenityApp.Web\obj\Debug\netcoreapp3.1\Razor\Modules\Market\Store\StoreIndex.cshtml.g.cs
+D:\HD\Project\YouTube\SerenityYoutube\SerenityApp\SerenityApp\SerenityApp.Web\obj\Debug\netcoreapp3.1\Razor\Modules\Market\Visit\VisitIndex.cshtml.g.cs

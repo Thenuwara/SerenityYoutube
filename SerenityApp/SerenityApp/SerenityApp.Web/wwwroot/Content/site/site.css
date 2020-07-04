@@ -8092,3 +8092,15 @@ section.content > .s-DataGrid {
   font-style: italic;
   color: #966;
 }
+.s-Market-StoreDialog > .size {
+  width: 650px;
+}
+.s-Market-StoreDialog .caption {
+  width: 150px;
+}
+.s-Market-VisitDialog > .size {
+  width: 650px;
+}
+.s-Market-VisitDialog .caption {
+  width: 150px;
+}
