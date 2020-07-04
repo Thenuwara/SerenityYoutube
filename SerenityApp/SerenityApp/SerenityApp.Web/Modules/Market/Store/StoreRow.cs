@@ -22,7 +22,7 @@ namespace SerenityApp.Market.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Name"), Column("store_name"), Size(50), NotNull, QuickSearch]
+        [DisplayName("Store Name"), Column("store_name"), Size(50), NotNull, QuickSearch]
         public String Name
         {
             get { return Fields.Name[this]; }
